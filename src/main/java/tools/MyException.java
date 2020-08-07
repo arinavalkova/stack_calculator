@@ -1,3 +1,5 @@
+package tools;
+
 public class MyException extends Throwable
 {
     private final String lineOfMistake;

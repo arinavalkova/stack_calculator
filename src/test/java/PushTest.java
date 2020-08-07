@@ -1,7 +1,10 @@
+import commands.*;
 import org.apache.log4j.Logger;
 import org.junit.Test;
+import storage.Storage;
+import tools.MyException;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class PushTest
 {

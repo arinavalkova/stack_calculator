@@ -1,13 +1,14 @@
-import org.apache.log4j.Logger;
+package tools;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import org.apache.log4j.Logger;
+import storage.Storage;
+import commands.*;
+
+import java.io.*;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 
-class Tools
+public class Tools
 {
     private static final Logger log = Logger.getLogger(Tools.class);
 
@@ -79,7 +80,15 @@ class Tools
 
     public static String findNameOfClass(String nameOfOperation)
     {
-        InputStream input = Tools.class.getResourceAsStream(Consts.CONFIGURATION_FILE);
+        File file = new File("src/main/resources/Configuration.TXT");;
+        InputStream input = null;
+        try
+        {
+            input = new FileInputStream(file);
+        } catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
         BufferedReader reader = new BufferedReader(new InputStreamReader(input));
 
         String line;
@@ -190,14 +199,14 @@ class Tools
     }
 
     private static final Map<String, Integer> countOfArgs = Map.of(
-            "Define", 2,
-            "Pop", 0,
-            "Push", 1,
-            "Print", 0,
-            "Sqrt", 0,
-            "Addition", 0,
-            "Subtraction", 0,
-            "Multiplication", 0,
-            "Division", 0
+            "commands.Define", 2,
+            "commands.Pop", 0,
+            "commands.Push", 1,
+            "commands.Print", 0,
+            "commands.Sqrt", 0,
+            "commands.Addition", 0,
+            "commands.Subtraction", 0,
+            "commands.Multiplication", 0,
+            "commands.Division", 0
     );
 }

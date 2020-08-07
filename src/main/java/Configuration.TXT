@@ -1,9 +1,0 @@
-PUSH Push
-POP Pop
-PRINT Print
-SQRT Sqrt
-+ Addition
-- Subtraction
-DEFINE Define
-* Multiplication
-/ Division
